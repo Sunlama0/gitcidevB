@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="0" errors="0" time="0.41">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-10-15T12:34:46" time="0.361" tests="4">
-    <testcase classname=" initial task list is empty" name=" initial task list is empty" time="0.002">
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="0.802">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-10-15T13:58:28" time="0.673" tests="6">
+    <testcase classname=" initial task list is empty" name=" initial task list is empty" time="0.003">
     </testcase>
-    <testcase classname=" addTask ajoute une tâche correctement" name=" addTask ajoute une tâche correctement" time="0">
+    <testcase classname=" addTask ajoute une tâche correctement" name=" addTask ajoute une tâche correctement" time="0.005">
     </testcase>
-    <testcase classname=" addTask rejette un nom vide" name=" addTask rejette un nom vide" time="0.005">
+    <testcase classname=" addTask rejette un nom vide" name=" addTask rejette un nom vide" time="0.01">
     </testcase>
-    <testcase classname=" addTask rejette un nom non string" name=" addTask rejette un nom non string" time="0">
+    <testcase classname=" addTask rejette un nom non string" name=" addTask rejette un nom non string" time="0.001">
+    </testcase>
+    <testcase classname=" toggleTask inverse le statut done" name=" toggleTask inverse le statut done" time="0">
+    </testcase>
+    <testcase classname=" toggleTask renvoie une erreur si id inconnu" name=" toggleTask renvoie une erreur si id inconnu" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
