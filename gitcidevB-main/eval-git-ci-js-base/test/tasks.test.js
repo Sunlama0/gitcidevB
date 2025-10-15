@@ -1,4 +1,4 @@
-const { getTasks, reset, addTask } = require('../lib/tasks');
+const { getTasks, reset, addTask, toggleTask } = require('../lib/tasks');
 
 beforeEach(() => {
   reset();
@@ -23,4 +23,15 @@ test('addTask rejette un nom vide', () => {
 
 test('addTask rejette un nom non string', () => {
   expect(() => addTask(123)).toThrow('Invalid name');
+});
+
+test('toggleTask inverse le statut done', () => {
+  const t = addTask('Tester toggle');
+  const updated = toggleTask(t.id);
+  expect(updated.done).toBe(true);
+  expect(getTasks()[0].done).toBe(true);
+});
+
+test('toggleTask renvoie une erreur si id inconnu', () => {
+  expect(() => toggleTask(999)).toThrow('Task not found');
 });
