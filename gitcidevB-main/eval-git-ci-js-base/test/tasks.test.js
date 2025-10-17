@@ -1,4 +1,4 @@
-const { getTasks, reset, addTask, countDone } = require('../lib/tasks');
+const { getTasks, reset, addTask, toggleTask, countDone } = require('../lib/tasks');
 
 beforeEach(() => {
   reset();
