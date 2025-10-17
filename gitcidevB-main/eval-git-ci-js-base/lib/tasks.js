@@ -35,5 +35,4 @@ function countDone() {
   return tasks.filter(t => t.done).length;
 }
 
-
-module.exports = { getTasks, reset, countDone, addTask };
+module.exports = { getTasks, reset, addTask, toggleTask, countDone };
