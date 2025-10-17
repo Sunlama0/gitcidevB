@@ -25,4 +25,16 @@ function addTask(name) {
 }
 
 
-module.exports = { getTasks, reset, addTask };
+function countDone() {
+  // Ancienne version (moins optimisée)
+  let doneCount = 0;
+  for (const task of tasks) {
+    if (task.done === true) {
+      doneCount++;
+    }
+  }
+  return doneCount;
+}
+
+
+module.exports = { getTasks, reset, countDone, addTask };

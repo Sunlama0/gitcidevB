@@ -1,4 +1,4 @@
-const { getTasks, reset, addTask } = require('../lib/tasks');
+const { getTasks, reset, addTask, countDone } = require('../lib/tasks');
 
 beforeEach(() => {
   reset();
@@ -23,4 +23,30 @@ test('addTask rejette un nom vide', () => {
 
 test('addTask rejette un nom non string', () => {
   expect(() => addTask(123)).toThrow('Invalid name');
+});
+
+test('countDone vaut 0 quand rien n’est terminé', () => {
+  addTask('A');
+  addTask('B');
+  expect(countDone()).toBe(0);
+});
+
+test('countDone compte uniquement les tâches done=true', () => {
+  const a = addTask('A');
+  const b = addTask('B');
+  const c = addTask('C');
+
+  toggleTask(a.id); // A -> done
+  toggleTask(c.id); // C -> done
+
+  expect(countDone()).toBe(2);
+});
+
+test('countDone reste cohérent après plusieurs toggles', () => {
+  const t = addTask('X');
+  expect(countDone()).toBe(0);
+  toggleTask(t.id);
+  expect(countDone()).toBe(1);
+  toggleTask(t.id);
+  expect(countDone()).toBe(0);
 });
