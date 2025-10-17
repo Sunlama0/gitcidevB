@@ -20,7 +20,9 @@ jobs:
           node-version: 18
 
       - name: Installation des dépendances qu'on a besoins
+        working-directory: gitcidevB-main/eval-git-ci-js-base
         run: npm install
 
       - name: Exécution des tests du fichier test
+        working-directory: gitcidevB-main/eval-git-ci-js-base
         run: npm test
