@@ -24,6 +24,12 @@ function addTask(name) {
   return newTask;
 }
 
+function toggleTask(id) {
+  const task = tasks.find(t => t.id === id);
+  if (!task) throw new Error('Task not found');
+  task.done = !task.done;
+  return task;
+}
 
 function countDone() {
   // Ancienne version (moins optimisée)
