@@ -32,14 +32,7 @@ function toggleTask(id) {
 }
 
 function countDone() {
-  // Ancienne version (moins optimisée)
-  let doneCount = 0;
-  for (const task of tasks) {
-    if (task.done === true) {
-      doneCount++;
-    }
-  }
-  return doneCount;
+  return tasks.filter(t => t.done).length;
 }
 
 
